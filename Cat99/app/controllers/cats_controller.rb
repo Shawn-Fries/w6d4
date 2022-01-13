@@ -14,13 +14,14 @@ class CatsController < ApplicationController
         render :new
     end
 
-    def create 
+    def create
         @cat = Cat.new(cat_params)
 
         if @cat.save
             redirect_to cat_url(@cat)
         else
-            render :new
+           # render json: @cat.errors.full_messages, status: 422
+           render :new
         end
     end
 
