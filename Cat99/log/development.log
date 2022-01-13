@@ -327,3 +327,65 @@ Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms)
 NoMethodError - undefined method `birth_date' for nil:NilClass:
   app/views/cats/show.html.erb:2:in `_app_views_cats_show_html_erb___4474215427609271562_70300587221900'
 
+Started POST "/cats" for ::1 at 2022-01-13 16:05:57 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/yuchenhang/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+
+AbstractController::ActionNotFound - The action 'create' could not be found for CatsController:
+
+Started GET "/cats/1" for ::1 at 2022-01-13 16:06:03 -0500
+Processing by CatsController#show as */*
+  Parameters: {"id"=>"1"}
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `birth_date' for nil:NilClass:
+  app/views/cats/show.html.erb:2:in `_app_views_cats_show_html_erb___2090760235898152656_13220'
+
+Started GET "/cats/1" for ::1 at 2022-01-13 16:12:42 -0500
+Processing by CatsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (1.8ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:8
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 389ms (Views: 356.2ms | ActiveRecord: 17.1ms)
+
+
+Started POST "/cats" for ::1 at 2022-01-13 16:57:45 -0500
+
+AbstractController::ActionNotFound - The action 'create' could not be found for CatsController:
+
+Started POST "/cats" for ::1 at 2022-01-13 17:02:22 -0500
+Processing by CatsController#create as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: cat:
+  app/controllers/cats_controller.rb:31:in `cat_params'
+  app/controllers/cats_controller.rb:18:in `create'
+
+Started POST "/cats" for ::1 at 2022-01-13 17:02:53 -0500
+Processing by CatsController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: cat:
+  app/controllers/cats_controller.rb:31:in `cat_params'
+  app/controllers/cats_controller.rb:18:in `create'
+
+Started POST "/cats" for ::1 at 2022-01-13 17:04:38 -0500
+Processing by CatsController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: cat:
+  app/controllers/cats_controller.rb:31:in `cat_params'
+  app/controllers/cats_controller.rb:18:in `create'
+
